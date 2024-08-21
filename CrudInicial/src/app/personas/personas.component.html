@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col">
+            <h1>Listado de Personas</h1>
+            <button class="btn btn-primary" [disabled]='deshabilitar' (click)="AgregarPersona()">Agregar Persona</button>
+          <p>{{mensaje}}</p>
+            <app-persona></app-persona>
+          
+        </div>
+    </div>
+
+</div>
