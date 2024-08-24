@@ -1,0 +1,21 @@
+{{titulo}}
+<hr>
+<p  style="color: blueviolet; font-size:x-large">Bienvenido Ingeniero </p>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let persona of personas; let i= index">
+       {{i  }}  ->  {{persona.nombre}} {{persona.apellido}} edad : {{persona.edad}}
+        <hr>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+</div>
