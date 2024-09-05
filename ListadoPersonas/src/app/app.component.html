@@ -2,56 +2,17 @@
     <div class="col">
         <h3>{{titulo}}</h3>
         <hr>
-        <form class="form-row">
+<app-formulario 
+(personaCreada)="personaAgregada($event)"
+>
 
-            <div class="form-row col-md-2" >
-              <label for="nombre" class="sr-only">NOMBRE</label>
-              <input type="text" name="nombre" id="nombre" 
-              placeholder="Nombre" class="form-control" [(ngModel)]="nombreInput"> 
-            </div>
-
-            <div class="form-row col-md-2" >
-            <label for="apellido"class="sr-only">APELLIDO</label>
-            <input type="text" name="apellido" id="apellido"
-            placeholder="apellido" class="form-control" [(ngModel)]="apellidoInput"> 
-            </div>
-            <div class="form-row col-md-2" >
-              <label for="edad" class="sr-only">EDAD</label>
-              <input type="text" name="edad" id="edad"
-              placeholder="edad" class="form-control" [(ngModel)]="edadInput"> 
-             </div>
-             <div class="col">
-                <button type="submit" class="btn btn-primary"
-                 style="background-color: chartreuse; color: red;" (click)="AgregarPersona()" >Agregar Persona</button>
-
-
-
-
-             </div>
-
-
-<hr>
-
-            <div *ngFor="let persona of personas; let i= index">
-              {{i  }}  ->  {{persona.nombre}} {{persona.apellido}} edad : {{persona.edad}}
-               <hr>
-            </div>
-        </form>
-
-
-    </div>
-
-
-
-
+</app-formulario>
 </div>
 
+<app-persona
+*ngFor="let personaElemento of personas; let i= index"
+[persona]="personaElemento"
+[indice]="i"
+>
 
-
-
-
-
-
-
-
-
+</app-persona>

@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Persona } from './persona.model';
 import { NgFor } from '@angular/common';
+import { PersonaComponent } from './persona/persona.component';
+import { FormularioComponent } from './formulario/formulario.component';
 import { FormsModule } from '@angular/forms';
+
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,NgFor, FormsModule, NgFor],
+  imports: [RouterOutlet,NgFor, NgFor, PersonaComponent, FormularioComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -24,14 +28,8 @@ export class AppComponent {
     new Persona('Camilo', 'Torrez', 36)];
 
 
-      nombreInput:string='';
-      apellidoInput:string='';
-      edadInput: number=0;
-
-  
-AgregarPersona(){
-  let persona1= new Persona(this.nombreInput, this.apellidoInput, this.edadInput);
-  this.personas.push(persona1);
+personaAgregada(persona: Persona){
+this.personas.push(persona);
 
 }
 
